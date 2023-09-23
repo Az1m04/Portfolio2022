@@ -4,9 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "docker-build": "docker build -t az1m04/portfolio2023 .",
+    "docker-run": "docker run -p 5173:5173 portfolio2023",
+    "docker-upload": "docker push az1m04/portfolio2023"
   },
   "dependencies": {
     "react": "^18.2.0",
