@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "docker-build": "docker build -t az1m04/portfolio2023 .",
-    "docker-run": "docker run -p 5173:5173 portfolio2023",
+    "docker-run": "docker run -p 5173:5173 az1m04/portfolio2023",
     "docker-upload": "docker push az1m04/portfolio2023"
   },
   "dependencies": {
