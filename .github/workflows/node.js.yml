@@ -33,9 +33,9 @@ jobs:
         password: ${{secrets.DOCKER_TOKEN}}
     - name: Build Docker image
       run: npm run docker-build
-    - name: Run Docker image
-      run: npm run docker-run
     - name: Push Docker image
       run: npm run docker-upload
+
+ 
 
 
