@@ -6,17 +6,19 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
+    "start": "serve -s dist",
     "preview": "vite preview",
     "docker-build": "docker build -t az1m04/portfolio2023 .",
-    "docker-run": "docker run -p 5173:5173 az1m04/portfolio2023",
+    "docker-run": "docker run -d -p 3000:3000 az1m04/portfolio2023",
     "docker-upload": "docker push az1m04/portfolio2023"
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "serve": "^14.2.1"
   },
   "devDependencies": {
-    "@types/react": "^18.0.15",                                                                                                 
+    "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.0.0",
     "autoprefixer": "^10.4.7",

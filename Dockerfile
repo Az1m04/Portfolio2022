@@ -1,24 +1,22 @@
-# Start from the official Node.js LTS base image
-FROM node:lts
-
-# Set the working directory
+# Build stage
+FROM node:lts AS builder
 WORKDIR /app
-
-# Copy package.json and package-lock.json before other files
-# Utilize Docker cache to save re-installing dependencies if unchanged
 COPY package*.json ./
-
-# Install dependencies
-RUN npm install
-
-# Copy all files
+RUN npm ci
 COPY . .
-
-# Build the Next.js application
 RUN npm run build
 
+# Run stage
+FROM node:alpine
+WORKDIR /app
+# COPY --from=builder /app/next.config.js .
+COPY --from=builder /app/dist ./dist
+# COPY --from=builder /app/public ./public
+COPY --from=builder /app/package*.json ./
+RUN npm ci --only=production
+
 # Expose the listening port
-EXPOSE 5173
+EXPOSE 3000
 
 # Run the application
-CMD [ "npm", "run", "dev" ]                                                                                                                          
+CMD [ "npm", "run", "start" ]                                                                                                                          

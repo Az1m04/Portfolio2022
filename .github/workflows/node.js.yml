@@ -35,6 +35,15 @@ jobs:
       run: npm run docker-build
     - name: Push Docker image
       run: npm run docker-upload
+    # - name: executing remote ssh commands to deploy
+    #   uses: appleboy/ssh-action@master
+    #   with:
+    #     host: ${{ secrets.HOST }}
+    #     username: ${{ secrets.USERNAME }}
+    #     key: ${{ secrets.SSH_KEY }}
+    #     script: |
+    #       docker pull <your-docker-image>
+    #       docker run -d -p 80:80 <your-docker-image>
 
  
 
