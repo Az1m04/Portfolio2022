@@ -33,6 +33,9 @@ import omg from "./omg.png";
 import oceanTrucking from "./oceanTrucking.png";
 import github from "./github.png"
 import viewLive from "./viewLive.png"
+import viewLive from "./viewLive.png"
+import viewLive from "./viewLive.png"
+import viewLive from "./viewLive.png"
 
 export {
   bill,
